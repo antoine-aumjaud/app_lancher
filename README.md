@@ -1,4 +1,4 @@
-# Executable wrapper
+# Executable launcher
 
 A simple executable file to wrap a call to the target executable file.
 The target executable file is in the text file named `<exe_filename>.link`.
@@ -27,11 +27,11 @@ C:\Program Files\nodejs\node.exe
 
 ## Debug
 
-You can add a first parameter `--debug` or `-d`, to add some logs.
+You can add a first parameter `--debug-launcher` to add some logs.
 
 - Without param
 ```
-$ target/debug/launcher.exe -d
+$ target/debug/launcher.exe --debug-launcher
 [WRAPPER] Params: []
 [WRAPPER] Config file: C:\Users\me\prog\launchexe\launcher\target\debug\launcher.exe.link
 [WRAPPER] Link to: C:\Program Files\nodejs\node.exe
@@ -45,7 +45,7 @@ Type ".help" for more information.
 
 - With param
 ```
-$ target/debug/launcher.exe -d --version
+$ target/debug/launcher.exe --debug-launcher --version
 [WRAPPER] Params: ["--version"]
 [WRAPPER] Config file: C:\Users\antoi\prog\launchexe\launcher\target\debug\launcher.exe.link
 [WRAPPER] Link to: C:\Program Files\nodejs\node.exe

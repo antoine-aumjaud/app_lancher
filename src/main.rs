@@ -8,7 +8,7 @@ fn main() {
     //Get params
     let mut args: Vec<String> = env::args().collect();
     args.remove(0);
-    let debug = args.first().unwrap().eq("--debug") || args.first().unwrap().eq("-d") ; 
+    let debug = args.len() > 0 && ( args.first().unwrap().eq("--debug") || args.first().unwrap().eq("-d") ); 
     if debug { 
         args.remove(0); //remove --debug
         println!("[WRAPPER] Params: {:?}", args); 

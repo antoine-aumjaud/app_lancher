@@ -1,7 +1,22 @@
 # Executable launcher
 
 A simple executable file to wrap a call to the target executable file.
-The target executable file is in the text file named `<exe_filename>.link`.
+The target executable file path is in the text file named `<exe_filename>.link`.
+
+The aim of this launcher is to simulate *Linux link files* on Windows. 
+On Windows, `mklinks` requires admin rights to create link to files. 
+
+With this launcher, you can add it to a folder in the path named like the target binary name (ex: `$HOME/.local/bin/node.exe`) and its configuration (`$HOME/.local/bin/node.exe.link`) which contains the path to the real binary name (ex: `C:\Program Files\nodejs\node.exe`).
+
+Thus, even if the real `node.exe` is not in the PATH, `node.exe` can be called.
+
+But, Why do not add the real binary file to the path: 
+- The Windows user PATH has a limited size,
+- Other Apps should be relaunched to get the new PATH environment variable up to date.
+
+And why do not create a batch file:
+- Because batch file should be called with a `call` parameter in other batchs, it can create regressions,
+- Because some Apps search the ".exe" file. 
 
 ## Build
 - Debug
